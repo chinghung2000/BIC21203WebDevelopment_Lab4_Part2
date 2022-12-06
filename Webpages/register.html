@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="Ching Hung">
+    <title>Registration - BlackBox | For Creators & Streamers</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/JavaScript">
+        function $e(id) {
+            return document.getElementById(id);
+        }
+
+        function validate() {
+            $e("input-fname").style.borderColor = "#000000";
+            $e("input-lname").style.borderColor = "#000000";
+            $e("input-email").style.borderColor = "#000000";
+            $e("input-pswd").style.borderColor = "#000000";
+            $e("input-cpswd").style.borderColor = "#000000";
+
+            let form = document.forms["register-form"];
+            let fname = form["fname"].value;
+            let lname = form["lname"].value;
+            let email = form["email"].value;
+            let pswd = form["pswd"].value;
+            let cpswd = form["cpswd"].value;
+
+            if (fname == "") {
+                showMessage("Please enter first name.");
+                $e("input-fname").style.borderColor = "#ff0000";
+                $e("input-fname").focus();
+            } else if (lname == "") {
+                showMessage("Please enter last name.");
+                $e("input-lname").style.borderColor = "#ff0000";
+                $e("input-lname").focus();
+            } else if (email == "") {
+                showMessage("Please enter email.");
+                $e("input-email").style.borderColor = "#ff0000";
+                $e("input-email").focus();
+            } else {
+                let pattern = /[a-z0-9.]+@[a-z0-9]+\.[a-z]{2,3}/;
+
+                if (!pattern.test(email)) {
+                    showMessage("Incorrect email format.");
+                    $e("input-email").style.borderColor = "#ff0000";
+                    $e("input-email").focus();
+                } else if (pswd == "") {
+                    showMessage("Please enter password.");
+                    $e("input-pswd").style.borderColor = "#ff0000";
+                    $e("input-pswd").focus();
+                } else if (cpswd == "") {
+                    showMessage("Please confirm password.");
+                    $e("input-cpswd").style.borderColor = "#ff0000";
+                    $e("input-cpswd").focus();
+                } else if (pswd != cpswd) {
+                    showMessage("Password didn't match.");
+                    $e("input-pswd").style.borderColor = "#ff0000";
+                    $e("input-pswd").focus();
+                    $e("input-cpswd").style.borderColor = "#ff0000";
+                } else {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        let t;
+
+        function clearMessage() {
+            clearTimeout(t);
+            t = setTimeout(function () {
+                $e("span-message").innerHTML = null;
+            }, 5000);
+        }
+
+        function showMessage(message) {
+            $e("span-message").innerHTML = message;
+            clearMessage();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="home.html">
+                <img class="logo" src="img/BlackBox Logo 2.png">
+            </a>
+        </div>
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="#">Webcams</a></li>
+                <li><a href="category-capture.html">Capture</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">Control Deck</a></li>
+                <li><a href="#">Lightning</a></li>
+                <li>|</li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="opt">
+            <a href="#">
+                <div class="opt-button search-button"></div>
+            </a>
+            <a href="register.html">
+                <div class="opt-button user-button"></div>
+            </a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="register-form">
+            <div class="form-header">
+                <div class="form-buttons">
+
+                </div>
+                <div class="form-title">
+                    <span>REGISTER ACCOUNT</span>
+                </div>
+                <div class="form-message">
+                    <span id="span-message"></span>
+                </div>
+            </div>
+            <div class="form-body">
+                <form id="form-register" name="register-form" action="" method="post" onsubmit="return validate();">
+                    <label for="input-fname">First name: </label>
+                    <input id="input-fname" type="text" name="fname" maxlength="20" autocomplete="off" autofocus>
+                    <br>
+                    <label for="input-lname">Last name: </label>
+                    <input id="input-lname" type="text" name="lname" maxlength="20" autocomplete="off">
+                    <br>
+                    <label for="input-email">Email: </label>
+                    <input id="input-email" type="text" name="email" maxlength="30" autocomplete="off">
+                    <br>
+                    <label for="input-pswd">Password: </label>
+                    <input id="input-pswd" type="password" name="pswd" maxlength="20" autocomplete="off">
+                    <br>
+                    <label for="input-cpswd">Confirm password: </label>
+                    <input id="input-cpswd" type="password" name="cpswd" maxlength="20" autocomplete="off">
+                    <button type="submit" form="form-register">Register</button>
+                </form>
+            </div>
+            <div class="form-footer">
+                <span>Already have an account? <a href="#"><u>Login here</u></a></span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-top">
+            <ul class="footer-section">
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">PRODUCTS</li>
+                        <li><a href="#">Webcams</a></li>
+                        <li><a href="category-capture.html">Capture</a></li>
+                        <li><a href="#">Audio</a></li>
+                        <li><a href="#">Control Deck</a></li>
+                        <li><a href="#">Lightning</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">SUPPORT</li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Technical Support</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Return & Refunds</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">ABOUT US</li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">BlackBox</a></li>
+                        <li><a href="#">Avermedia</a></li>
+                        <li><a href="#">Elgato</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">CONNECT</li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitch</a></li>
+                        <li><a href="#">Reddit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <span class="copyright">Copyright © BlackBox 2022</span>
+        </div>
+    </div>
+</body>
+
+</html>

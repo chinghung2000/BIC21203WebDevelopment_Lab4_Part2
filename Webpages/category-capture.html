@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="Ching Hung">
+    <title>Category - BlackBox | For Creators & Streamers</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/JavaScript">
+        function $e(id) {
+            return document.getElementById(id);
+        }
+
+        let data = {};
+
+        function dataCheck() {
+            if (Object.keys(data).length > 0) {
+                $e("button-proceed").disabled = false;
+                $e("button-proceed").style.backgroundColor = "#12ad12";
+                $e("button-proceed").style.borderColor = "#12ad12";
+            } else {
+                $e("button-proceed").disabled = true;
+                $e("button-proceed").style.backgroundColor = "#7f7f7f";
+                $e("button-proceed").style.borderColor = "#7f7f7f";
+            }
+        }
+
+        document.addEventListener("click", function(event) {
+            let element = event.target;
+
+            if (element.classList.contains("checkbox")) {
+                let id = element.getAttribute("data-id");
+                let name = element.getAttribute("data-name");
+                let image = element.getAttribute("data-image");
+                let price = element.getAttribute("data-price");
+                let quantity = 1;
+
+                if (id in data) {
+                    delete data[id];
+                    element.classList.remove("checked");
+                    element.nextElementSibling.childNodes[1].setAttribute("hidden", "hidden");
+                } else {
+                    data[id] = {name: name, image: image, price: price, quantity: quantity};
+                    element.classList.add("checked");
+                    element.nextElementSibling.childNodes[1].removeAttribute("hidden");
+                }
+            }
+
+            dataCheck();
+        });
+
+        document.addEventListener("change", function(event) {
+            let element = event.target;
+
+            if (element.classList.contains("input-quantity")) {
+                let id = element.parentNode.previousElementSibling.getAttribute("data-id");
+                let quantity = element.value;
+
+                if (quantity >= 1 && quantity <= 99) {
+                    if (id in data) {
+                        data[id]["quantity"] = quantity;
+                    }
+                } else {
+                    element.style.borderColor = "#ff0000";
+                }
+            }
+
+            dataCheck();
+        });
+
+        function submit() {
+            localStorage.setItem("submit", true);
+            localStorage.setItem("data", JSON.stringify(data));
+            location.href = "order-summary.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="home.html">
+                <img class="logo" src="img/BlackBox Logo 2.png">
+            </a>
+        </div>
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="#">Webcams</a></li>
+                <li><a href="category-capture.html">Capture</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">Control Deck</a></li>
+                <li><a href="#">Lightning</a></li>
+                <li>|</li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="opt">
+            <a href="#">
+                <div class="opt-button search-button"></div>
+            </a>
+            <a href="register.html">
+                <div class="opt-button user-button"></div>
+            </a>
+        </div>
+    </div>
+    <div class="body">
+        <div class="position">
+            <a href="home.html">Home</a> &gt; Category
+        </div>
+        <div class="leftbar">
+            <ul class="category">
+                <li class="label">Categories</li>
+                <li class="list"><a href="#">Webcams</a></li>
+                <li class="selected"><a href="#">Capture</a></li>
+                <li class="list"><a href="#">Audio</a></li>
+                <li class="list"><a href="#">Control Deck</a></li>
+                <li class="list"><a href="#">Lightning</a></li>
+            </ul>
+            <button class="proceed" id="button-proceed" onclick="submit();" disabled>PROCEED</button>
+        </div>
+        <div class="result">
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc555"
+                    data-name="Avermedia Live Gamer BOLT GC555 - LIVE Matters" data-image="avermedia-gc555.png"
+                    data-price="1339.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc555"></div>
+                <div class="flashcard3-text">Avermedia<br>GC555 - Live Gamer BOLT</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc553"
+                    data-name="Avermedia Live Gamer ULTRA GC553 - Capture Like Never Before"
+                    data-image="avermedia-gc553.png" data-price="669.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc553"></div>
+                <div class="flashcard3-text">Avermedia<br>GC553 - Live Gamer ULTRA</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc551g2"
+                    data-name="Avermedia Live Gamer EXTREME 3 GC551G2 - Plug & Play 4K Capture"
+                    data-image="avermedia-gc551g2.png" data-price="759.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc551g2"></div>
+                <div class="flashcard3-text">Avermedia<br>GC551G2 - Live Gamer EXTREME 3</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="elgato-4k60splus" data-name="Elgato 4K60 S+"
+                    data-image="4k60s+-min_0.webp" data-price="1789.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image elgato-4k60splus"></div>
+                <div class="flashcard3-text">Elgato<br>4K60 S+</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc573"
+                    data-name="Avermedia Live Gamer 4K GC573 - Capture Like Never Before"
+                    data-image="avermedia-gc573.png" data-price="1029.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc573"></div>
+                <div class="flashcard3-text">Avermedia<br>GC573 - Live Gamer 4K</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc570d"
+                    data-name="Avermedia Live Gamer DUO GC570D - Dual 1080p Uncompressed Video Capture Card"
+                    data-image="avermedia-gc570d.png" data-price="889.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc570d"></div>
+                <div class="flashcard3-text">Avermedia<br>GC570D - Live Gamer DUO</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="elgato-4k60pro" data-name="Elgato 4K60 PRO "
+                    data-image="4k60pro-min.webp" data-price="1119.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image elgato-4k60pro"></div>
+                <div class="flashcard3-text">Elgato<br>4K60 PRO</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc551"
+                    data-name="Avermedia Live Gamer EXTREME 2 GC551 - Your Stream. Your Design."
+                    data-image="avermedia-gc551.png" data-price="1129.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc551"></div>
+                <div class="flashcard3-text">Avermedia<br>GC551 - Live Gamer EXTREME 2</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc311"
+                    data-name="Avermedia Live Gamer MINI GC311 - Step Into Your Spot Light"
+                    data-image="avermedia-gc311.png" data-price="359.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc311"></div>
+                <div class="flashcard3-text">Avermedia<br>GC311 - Live Gamer MINI</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc570"
+                    data-name="Avermedia Live Gamer HD 2 GC570 - Stream 2 Victory" data-image="avermedia-gc570.png"
+                    data-price="669.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc570"></div>
+                <div class="flashcard3-text">Avermedia<br>GC570 - Live Gamer HD 2</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="avermedia-gc513"
+                    data-name="Avermedia Live Gamer Portable 2 PLUS GC513 - Stream 2 Victory"
+                    data-image="avermedia-gc513.png" data-price="709.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image avermedia-gc513"></div>
+                <div class="flashcard3-text">Avermedia<br>GC513 - Live Gamer Portable 2 PLUS</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="elgato-hd60splus" data-name="Elgato HD60 S+"
+                    data-image="hd60s+-min-1.webp" data-price="799.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image elgato-hd60splus"></div>
+                <div class="flashcard3-text">Elgato<br>HD60 S+</div>
+            </div>
+            <div class="flashcard3">
+                <div class="checkbox" data-id="elgato-hd60x" data-name="Elgato HD60X" data-image="hd60x-thumbnail.webp"
+                    data-price="669.99"></div>
+                <div class="quantity">
+                    <input class="input-quantity" type="number" min="1" max="99" value="1" hidden>
+                </div>
+                <div class="flashcard3-image elgato-hd60x"></div>
+                <div class="flashcard3-text">Elgato<br>HD60 X</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-top">
+            <ul class="footer-section">
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">PRODUCTS</li>
+                        <li><a href="#">Webcams</a></li>
+                        <li><a href="category-capture.html">Capture</a></li>
+                        <li><a href="#">Audio</a></li>
+                        <li><a href="#">Control Deck</a></li>
+                        <li><a href="#">Lightning</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">SUPPORT</li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Technical Support</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Return & Refunds</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">ABOUT US</li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">BlackBox</a></li>
+                        <li><a href="#">Avermedia</a></li>
+                        <li><a href="#">Elgato</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer-section-content">
+                        <li class="label">CONNECT</li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitch</a></li>
+                        <li><a href="#">Reddit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <span class="copyright">Copyright © BlackBox 2022</span>
+        </div>
+    </div>
+</body>
+
+</html>

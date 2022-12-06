@@ -1,0 +1,796 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana;
+    font-size: 16px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+div.header {
+    background-color: #ffffff;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
+    height: 80px;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+}
+
+div.logo {
+    margin: 10px 38px 10px 100px;
+    height: 60px;
+    width: 160px;
+    min-width: 160px;
+    overflow: hidden;
+}
+
+img.logo {
+    height: 160px;
+    width: auto;
+    position: relative;
+    top: -50px;
+    left: 0;
+}
+
+div.nav {
+    margin: 10px 50px 10px 50px;
+    height: 60px;
+    width: 900px;
+}
+
+ul.menu {
+    list-style: none;
+    margin: 15px 0;
+    height: 30px;
+    display: flex;
+}
+
+ul.menu li {
+    line-height: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+ul.menu li:hover {
+    background-color: #000000;
+}
+
+ul.menu li a {
+    transition: color 0.2s;
+}
+
+ul.menu li:hover a {
+    color: #ffffff;
+}
+
+div.opt {
+    margin: 10px 100px 10px 38px;
+    height: 60px;
+    width: 120px;
+    display: flex;
+}
+
+div.opt-button {
+    margin: 15px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+div.search-button {
+    background-image: url("icon/search-interface-symbol.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+div.user-button {
+    background-image: url("icon/user.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+div.body {
+    padding: 80px 0 0;
+    overflow: auto;
+}
+
+div.banner-image {
+    background-image: url("img/image1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+}
+
+div.banner-cover {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+    height: 800px;
+}
+
+div.banner-text {
+    font-family: sans-serif;
+    font-size: 28px;
+    color: #ffffff;
+    height: 300px;
+    width: 500px;
+    position: absolute;
+    top: 280px;
+    left: 100px;
+}
+
+div.banner-text p {
+    font-family: Arial;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 40px;
+    margin: 0 0 20px 0;
+}
+
+div.content {
+    padding: 20px;
+}
+
+div.content-section {
+    margin: 20px 0;
+    min-height: 600px;
+}
+
+div.section-title {
+    text-align: center;
+    margin: 20px auto;
+    height: 100px;
+    width: 1000px;
+}
+
+div.section-title span {
+    font-family: Arial;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 100px;
+}
+
+div.section-content {
+    margin: 20px auto;
+    min-height: 460px;
+    width: fit-content;
+    overflow: auto;
+}
+
+div.flashcard {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    height: 300px;
+    width: 500px;
+    float: left;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+div.flashcard:hover {
+    transform: scale(1.03, 1.03);
+}
+
+div.flashcard.avermedia {
+    background-image: url("img/e8f6a8213eba322914066e4557ffbd5e.png");
+    background-size: 300px;
+    background-position: 100px 120px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard.elgato {
+    background-image: url("img/elgato_full_logo-black.webp");
+    background-size: 300px;
+    background-position: 100px 110px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard2 {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    height: 250px;
+    width: 400px;
+    float: left;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+div.flashcard2:hover {
+    transform: scale(1.03, 1.03);
+}
+
+div.flashcard2-long {
+    width: 840px;
+}
+
+div.flashcard2-images {
+    margin: 20px auto;
+    width: fit-content;
+}
+
+div.flashcard2-image {
+    margin: 0 20px;
+    height: 160px;
+    width: 300px;
+    display: inline-block;
+}
+
+div.flashcard2-text {
+    text-align: center;
+    margin: 20px;
+    height: 30px;
+}
+
+div.flashcard2-text span {
+    line-height: 30px;
+}
+
+div.flashcard2-image.capture1 {
+    background-image: url("img/hd60s+-min-1.webp");
+    background-size: cover;
+    background-position: 0 -40px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard2-image.capture2 {
+    background-image: url("img/NS_product_profile-709399596a522d36c7cd074af685e506.png");
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+div.flashcard2-image.control-deck {
+    background-image: url("img/NS_product_profile-4c807cef1a237447bb745778bcfb0470.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard2-image.audio {
+    background-image: url("img/NS_product_profile-a8625e0ec6698d90d654cae011c0cd97.png");
+    background-size: cover;
+    background-position: 0 -10px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard2-image.webcam {
+    background-image: url("img/NS_product_profile-7ec337a2f562f29bac8ed2f94e2dabe4.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard2-image.lightning {
+    background-image: url("img/ringlight-min.png");
+    background-size: contain;
+    background-position: 50px 0;
+    background-repeat: no-repeat;
+}
+
+div.footer {
+    font-family: Arial;
+    color: #7f7f7f;
+    margin: 50px 0 0 0;
+    border-top: 2px solid #bfbfbf;
+    padding: 20px 100px;
+    height: 320px;
+}
+
+div.footer-top {
+    margin: 20px 0;
+    overflow: auto;
+}
+
+ul.footer-section {
+    list-style: none;
+    display: flex;
+}
+
+ul.footer-section li {
+    padding: 0 150px 0 0;
+}
+
+ul.footer-section-content {
+    list-style: none;
+}
+
+ul.footer-section-content li {
+    padding: 3px 0;
+}
+
+ul.footer-section-content li.label {
+    font-weight: bold;
+    padding: 0 0 10px;
+}
+
+ul.footer-section-content li a {
+    color: #7f7f7f;
+    transition: color 0.2s;
+}
+
+ul.footer-section-content li:hover a {
+    color: #000000;
+}
+
+div.footer-bottom {
+    margin: 20px 0;
+    padding: 0 50px 0;
+    overflow: auto;
+}
+
+span.copyright {
+    font-size: 12px;
+}
+
+div.position {
+    font-size: 12px;
+    color: #7f7f7f;
+    line-height: 20px;
+    margin: 30px 100px 10px;
+    height: 20px;
+}
+
+div.position a {
+    color: #7f7f7f;
+}
+
+div.position a:hover {
+    text-decoration: underline;
+}
+
+div.leftbar {
+    border: 1px solid #7f7f7f;
+    border-radius: 5px;
+    margin: 20px 20px 20px 100px;
+    height: fit-content;
+    width: 200px;
+    float: left;
+}
+
+ul.category {
+    list-style: none;
+    padding: 0 25px;
+}
+
+ul.category li {
+    padding: 5px;
+}
+
+ul.category li.label {
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+ul.category li.list {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+ul.category li.list:hover {
+    background-color: #000000;
+}
+
+ul.category li.list a {
+    transition: color 0.2s;
+}
+
+ul.category li.list:hover a {
+    color: #ffffff;
+}
+
+ul.category li.selected {
+    cursor: pointer;
+    background-color: #000000;
+}
+
+ul.category li.selected a {
+    color: #ffffff;
+}
+
+button.proceed {
+    font-family: Verdana;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #7f7f7f;
+    border: 2px solid #7f7f7f;
+    border-radius: 20px;
+    margin: 20px 25px;
+    height: 40px;
+    width: 150px;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button.proceed:hover {
+    transform: scale(1.05, 1.05);
+}
+
+div.result {
+    border-radius: 5px;
+    margin: 20px 100px 20px 20px;
+    width: 1070px;
+    overflow: auto;
+    float: left;
+    clear: right;
+}
+
+div.flashcard3 {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    height: 300px;
+    width: 335px;
+    float: left;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+div.flashcard3:hover {
+    transform: scale(1.03, 1.03);
+}
+
+div.checkbox {
+    background-image: url("icon/check.png");
+    background-size: cover;
+    background-position: 999px 999px;
+    background-repeat: no-repeat;
+    border: 1px solid #9f9f9f;
+    border-radius: 20px;
+    margin: 15px;
+    height: 25px;
+    width: 25px;
+    float: left;
+}
+
+div.checkbox.checked {
+    background-position: 0 0;
+}
+
+div.quantity {
+    margin: 10px;
+    padding: 2px;
+    float: left;
+}
+
+div.quantity input {
+    font-family: Verdana;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 8px;
+    height: 15px;
+    width: 35px;
+}
+
+div.flashcard3-image {
+    margin: 20px auto;
+    height: 160px;
+    width: 300px;
+    clear: both;
+}
+
+div.flashcard3-text {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin: 10px 20px;
+    height: 50px;
+}
+
+div.flashcard3-image.avermedia-gc555 {
+    background-image: url("img/avermedia-gc555.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc553 {
+    background-image: url("img/avermedia-gc553.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc551g2 {
+    background-image: url("img/avermedia-gc551g2.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.elgato-4k60splus {
+    background-image: url("img/4k60s+-min_0.webp");
+    background-size: cover;
+    background-position: 0 -50px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc573 {
+    background-image: url("img/avermedia-gc573.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc570d {
+    background-image: url("img/avermedia-gc570d.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.elgato-4k60pro {
+    background-image: url("img/4k60pro-min.webp");
+    background-size: cover;
+    background-position: 0 -50px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc551 {
+    background-image: url("img/avermedia-gc551.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc311 {
+    background-image: url("img/avermedia-gc311.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc570 {
+    background-image: url("img/avermedia-gc570.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.avermedia-gc513 {
+    background-image: url("img/avermedia-gc513.png");
+    background-size: cover;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.elgato-hd60splus {
+    background-image: url("img/hd60s+-min-1.webp");
+    background-size: cover;
+    background-position: 0 -40px;
+    background-repeat: no-repeat;
+}
+
+div.flashcard3-image.elgato-hd60x {
+    background-image: url("img/hd60x-thumbnail.webp");
+    background-size: cover;
+    background-position: 0 -40px;
+    background-repeat: no-repeat;
+}
+
+div.register-form {
+    border: 2px solid #000000;
+    border-radius: 20px;
+    margin: 50px auto;
+    height: 530px;
+    width: 500px;
+}
+
+div.form-header {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+div.form-buttons {
+    height: 50px;
+}
+
+div.form-title {
+    text-align: center;
+    height: 50px;
+}
+
+div.form-title span {
+    font-family: Verdana;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+div.form-message {
+    text-align: center;
+    height: 40px;
+}
+
+div.form-message span {
+    line-height: 20px;
+    color: #ff0000;
+}
+
+div.form-body {
+    margin: 20px 0;
+    padding: 0 20px;
+    height: 280px;
+}
+
+div.form-body label {
+    text-align: right;
+    margin: 10px;
+    width: 160px;
+    display: inline-block;
+}
+
+div.form-body input {
+    font-family: Verdana;
+    font-size: 16px;
+    outline: none;
+    border: 2px solid #9f9f9f;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px 15px;
+    width: 220px;
+    display: inline-block;
+    transition: border-color 0.2s;
+}
+
+div.form-body input:hover {
+    border-color: #000000;
+}
+
+div.form-body input:focus {
+    border-color: #000000;
+}
+
+div.form-body button {
+    font-family: Verdana;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #000000;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    margin: 20px auto 0;
+    height: 35px;
+    width: 120px;
+    display: block;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+div.form-body button:hover {
+    color: #000000;
+    background-color: #ffffff;
+    transform: scale(1.03, 1.03);
+}
+
+div.form-footer {
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 20px;
+    height: 30px;
+}
+
+div.title {
+    margin: 30px 250px;
+    height: 30px;
+}
+
+div.title span {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+div.order-list {
+    border: 2px solid #3f3f3f;
+    border-radius: 20px;
+    margin: 50px auto;
+    width: 1100px;
+}
+
+div.list-head {
+    padding: 10px 50px;
+    height: 30px;
+    display: flex;
+}
+
+div.list-head span {
+    font-size: 14px;
+    line-height: 30px;
+    color: #7f7f7f;
+}
+
+div.col-product {
+    text-align: center;
+    width: 600px;
+}
+
+div.col-price {
+    text-align: center;
+    width: 150px;
+}
+
+div.col-quantity {
+    text-align: center;
+    width: 100px;
+}
+
+div.col-total {
+    text-align: center;
+    width: 150px;
+}
+
+div.order {
+    border-top: 1px solid #7f7f7f;
+    padding: 20px 50px;
+    height: 100px;
+    display: flex;
+}
+
+div.order span {
+    font-size: 14px;
+}
+
+div.product-image {
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+}
+
+div.product-info {
+    margin: 0 0 0 50px;
+    width: 450px;
+}
+
+div.product-price {
+    line-height: 100px;
+    text-align: center;
+    width: 150px;
+}
+
+div.product-quantity {
+    line-height: 100px;
+    text-align: center;
+    width: 100px;
+}
+
+div.product-total {
+    line-height: 100px;
+    text-align: center;
+    width: 150px;
+}
+
+div.summary {
+    border: 2px solid #3f3f3f;
+    border-radius: 20px;
+    margin: 50px 210px 50px auto;
+    padding: 20px;
+    width: 280px;
+}
+
+div.summary-item {
+    line-height: 30px;
+    color: #3f3f3f;
+    height: 30px;
+}
+
+div.item-name {
+    text-align: right;
+    width: 160px;
+    float: left;
+}
+
+div.item-value {
+    text-align: right;
+    width: 120px;
+    float: left;
+}
